@@ -1,6 +1,6 @@
-export async function getCharacters() {
+export async function apiCall(endpoint) {
     try {
-        const response = await fetch('https://www.breakingbadapi.com/api/characters/')
+        const response = await fetch(endpoint)
         if(!response.ok) throw new NetworkError();
         return await response.json();
     } catch (err) {

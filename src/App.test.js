@@ -1,6 +1,14 @@
+import React from 'react'
 import { render, screen } from '@testing-library/react';
 import App from './App';
 import data from './data.json';
+import {Provider, ReactReduxContext} from "react-redux";
+import {combineReducers, createStore} from "redux";
+import * as reducers from "./reducers";
+
+const store = createStore(combineReducers({
+  ...reducers,
+}));
 
 describe('Breaking Bad', () => {
   beforeAll(() => jest.spyOn(window, 'fetch'));
@@ -12,7 +20,11 @@ describe('Breaking Bad', () => {
       json: async () => data
     });
 
-    render(<App />);
+    render(
+        <Provider store={store} context={ReactReduxContext}>
+          <App />
+        </Provider>
+    );
     expect(window.fetch).toHaveBeenCalledTimes(1);
     expect(window.fetch).toHaveBeenCalledWith('https://www.breakingbadapi.com/api/characters/');
 
@@ -24,7 +36,11 @@ describe('Breaking Bad', () => {
   it('Show a message in case of network error', async () => {
     window.fetch.mockRejectedValueOnce(new Error('Network error'));
 
-    render(<App />)
+    render(
+        <Provider store={store} context={ReactReduxContext}>
+          <App />
+        </Provider>
+    );
     expect(await screen.findByText('Network error')).toBeInTheDocument();
   })
 })

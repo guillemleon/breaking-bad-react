@@ -1,0 +1,1 @@
+export { default as favouriteCharacters } from "./favourite-characters";

@@ -1,0 +1,21 @@
+{
+  "homePage": {
+    "favListTitle": "PERSONAJES FAVORITOS",
+    "favListEmpty": "Aun no has añadido ningun personaje a favoritos",
+    "allCharactersTitle": "TODOS LOS PERSONAJES",
+    "seeMoreButton": "Ver más",
+    "addToFavButton": "Añadir a favoritos",
+    "removeFromFavButton": "Eliminar de favoritos",
+    "loadingData": "...Cargando datos"
+  },
+  "characterDetailsPage": {
+    "randomQuoteButton": "Cita aleatoria",
+    "characterHasNoQuotes": "no tiene citas",
+    "name": "Nombre",
+    "birthday": "Nacimiento",
+    "status": "Estado",
+    "nickname": "Apodo",
+    "category": "Categoria",
+    "occupation": "Ocupación"
+  }
+}

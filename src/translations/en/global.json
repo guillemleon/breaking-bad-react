@@ -1,0 +1,21 @@
+{
+  "homePage": {
+    "favListTitle": "FAVOURITE CHARACTERS",
+    "favListEmpty": "There is no favourite characters on your list.",
+    "allCharactersTitle": "ALL CHARACTERS",
+    "seeMoreButton": "See more",
+    "addToFavButton": "Add to favourites",
+    "removeFromFavButton": "Remove from favourites",
+    "loadingData": "...Loading data"
+  },
+  "characterDetailsPage": {
+    "randomQuoteButton": "Random quote",
+    "characterHasNoQuotes": "has no quotes",
+    "name": "Name",
+    "birthday": "Birthday",
+    "status": "Status",
+    "nickname": "Nickname",
+    "category": "Category",
+    "occupation": "Occupation"
+  }
+}

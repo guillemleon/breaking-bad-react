@@ -1,0 +1,121 @@
+.html {
+    margin: 0;
+}
+.details-page-container {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(130deg, #46a08c 0%, #1C3F1D 100%, #303030 90%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.details-page-image-card{
+    width: 700px;
+    padding: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.page-title {
+    color: white;
+    margin: 70px 0;
+    font-size: 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-page-image-container {
+    border-radius: 5px;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(130deg, #46a08c 0%, #1C3F1D 100%, #303030 90%);
+}
+
+.details-page-image {
+    height: 100%;
+}
+
+.character-details-container {
+    width: 700px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 25px 0;
+    padding: 25px;
+}
+
+.occupation-list {
+    padding: 0;
+}
+
+.occupation-list-element {
+    margin: 5px 0 5px 40px;
+}
+
+.page-subtitle {
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 8px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .details-page-image-card {
+        width: 90vw;
+    }
+
+    .character-details-container {
+        width: 90vw;
+    }
+
+    .details-page-container {
+        width: auto;
+    }
+}

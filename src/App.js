@@ -1,41 +1,19 @@
+import React from 'react'
 import './App.css';
-import {useEffect, useState} from "react";
-import {getCharacters} from "./api/characters";
-import 'bootstrap';
-import CharacterCard from "./components/character-card/character-card";
+import {Route, Routes} from "react-router-dom";
+import CharacterDetail from "./pages/character-detail/character-detail";
+import Home from "./pages/home/home";
+import {BrowserRouter as Router} from "react-router-dom";
 
 function App() {
 
-    const [characters, setCharacters] = useState([]);
-    const [errorState, setErrorState] = useState({ hasError: false });
-    const [loadingData, setLoadingData] = useState(false)
-
-    useEffect(() => {
-        setLoadingData(true)
-        getCharacters()
-            .then((data) => setCharacters(data))
-            .catch(handleError)
-            .finally(() => setLoadingData(false));
-    }, [])
-
-    const handleError = (err) => {
-        setErrorState({ hasError: true, message: err.message });
-    }
-
     return (
-        <div className="app">
-            {loadingData ?
-                <div className="loading-message-container">
-                    <p>...Loading characters</p>
-                </div> :
-                <ul className="list-container">
-                    {errorState.hasError && <div>{errorState.message}</div>}
-                    {characters.map(char => (
-                        <CharacterCard key={char.name} data={char} />
-                    ))}
-                </ul>
-            }
-        </div>
+        <Router>
+            <Routes>
+                <Route exact path="/" element={<Home />}/>
+                <Route exact path="/character/:characterId" element={<CharacterDetail />} />
+            </Routes>
+        </Router>
     );
 }
 
